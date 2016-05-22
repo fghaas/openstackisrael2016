@@ -26,8 +26,8 @@ Note: This is how we designed our OpenStack cluster:
 - An OpenStack load balancer (as provided by LBaaS) directs requests from end
   users to the app servers.
 
-It is far from perfect, but we believe it is good enough for medium
-deployments.
+It's not perfect, but we believe it's as good as it gets with the
+current state of OpenStack and Open edX.
 
 
 Writing the
