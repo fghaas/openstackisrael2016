@@ -34,15 +34,41 @@ Writing the
 ## Heat template
 
 
-- 1 security group
-- 1 private network with a router <!-- .element: class="fragment" -->
-- 2 cloud-configs (deploy and backend/app) <!-- .element: class="fragment" -->
-- 1 deploy node with a public IP <!-- .element: class="fragment" -->
-- 1 load balancer with a public IP <!-- .element: class="fragment" -->
-- 3 backend servers <!-- .element: class="fragment" -->
-- X app servers in a pool <!-- .element: class="fragment" -->
-- Parameters: Key, public network, VM sizes, and number of app servers <!-- .element: class="fragment" -->
-- Outputs: Public IPs <!-- .element: class="fragment" -->
+### Resources
+
+1 security group
+
+1 private network with a router
+
+3 cloud-configs (deploy, backend, app)
+
+1 deploy node with a floating IP
+
+1 load balancer with a floating IP
+
+3 backend servers (in `ResourceGroup`)
+ 
+X app servers in a pool (in `ResourceGroup`)
+
+WaitConditions
+
+
+### Parameters
+
+SSH Key
+
+Public network
+
+VM flavors
+
+Volume sizes
+
+Number of app servers
+
+
+### Outputs
+
+Public IPs
 
 Note: After figuring out how to use the Ansible roles in edx/configuration, we
 forged ahead with writing the Heat template that would create the actual nodes
